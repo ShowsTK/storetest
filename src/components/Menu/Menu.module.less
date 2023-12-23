@@ -1,0 +1,118 @@
+@import "/src/styles/index.less";
+
+.btnResetStyles {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: @font-size-default;
+  text-transform: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 3px;
+  background: rgba(25, 29, 43, 0.5);
+  z-index: 100;
+  list-style-type: none;
+  overflow: hidden;
+
+  &Main {
+    position: relative;
+    margin: 10px;
+  }
+
+  &Toggle {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 26px;
+
+    &:hover {
+      span {
+        &, &::before, &::after {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 10px;
+
+      &, &::before, &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 4px;
+        width: 35px;
+        background-color: var(--color-primary);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 500ms ease-in-out;
+      }
+
+      &::before {
+        top: -12px;
+      }
+
+      &::after {
+        bottom: -12px;
+      }
+    }
+
+    &.active {
+      span {
+        background-color: transparent;
+
+        &::before, &::after {
+          top: 0;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &Item {
+    background: var(--background-color-secondary);
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 2px;
+    }
+  }
+
+  &Link {
+    //.fontParams('Roboto Slab', 15px);
+    //text-transform: uppercase;
+    color: var(--color-link);
+    display: block;
+    padding: 5px 10px;
+
+    &:hover {
+      color: var(--color-link-hovered);
+    }
+  }
+
+}

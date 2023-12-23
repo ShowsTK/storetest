@@ -1,0 +1,80 @@
+@import (reference) "/src/styles/vars.less";
+
+.wrapper {
+  background-color: var(--background-color-secondary);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0
+  }
+
+  .picture {
+    margin: 10px;
+    padding: 10px;
+    flex-basis: 300px;
+    background-color: #fff;
+    border-radius: 3px;
+
+    .image {
+      width: 300px;
+      height: auto;
+      min-height: 300px;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+
+  .article {
+    margin-bottom: 10px;
+  }
+
+  .caption {
+    font-weight: 300;
+  }
+
+  .info {
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding: 10px;
+
+    .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .description {
+      font-weight: 400;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+
+    .extraInfo {
+      Margin-top: 10px;
+    }
+  }
+}
+
+.buttonLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px;
+  color: var(--color-primary);
+  background-color: var(--background-color-primary);
+  border: 1px solid var(--background-color-secondary);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+
+  &:hover {
+    color: inherit;
+  }
+}

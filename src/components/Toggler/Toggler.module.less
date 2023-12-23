@@ -1,0 +1,49 @@
+:root {
+  --toggler-padding: 2px;
+  --toggler-border: 2px;
+  --ball-diameter: 14px;
+  --toggler-width: 47px;
+}
+
+.toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--toggler-width);
+  border-radius: var(--toggler-width);
+  padding: var(--toggler-padding);
+  background-color: var(--background-color-primary);
+  border: var(--toggler-border) solid var(--background-color-secondary);
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ball {
+  position: relative;
+  z-index: 1;
+  width: var(--ball-diameter);
+  height: var(--ball-diameter);
+  background-color: var(--color-primary);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  transition: transform 0.2s linear, background-color 0.2s ease;
+
+  &[data-theme='dark'],
+  &[data-theme='light'] {
+    background-color: var(--background-color-secondary);
+    box-shadow: inset 0 0 4px 2px var(--color-primary);
+  }
+}
+
+html {
+  &[data-theme='light'] .toggler {
+    transform: translateX(0);
+  }
+
+  &[data-theme='dark'] .ball {
+    transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 4 * var(--toggler-padding)));
+  }
+}

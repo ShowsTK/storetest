@@ -1,0 +1,15 @@
+@import (reference) "/src/styles/vars.less";
+
+.spinner {
+  color: var(--color-primary);
+  animation: preloader-spin 3s linear infinite;
+}
+
+@keyframes preloader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
